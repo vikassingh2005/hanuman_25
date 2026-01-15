@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Equipment - Hanuman Sports</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-light: rgba(255, 107, 0, 0.1);
+            --secondary: #0A0E17;
+            --accent: #00F0FF;
+            --light: #F8F9FA;
+            --dark: #212529;
+            --white: #FFFFFF;
+            --gray: #6C757D;
+            --cricket: #FF9800;
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --neon-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
+            --primary-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Enhanced Futuristic Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+            background: var(--secondary);
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 14, 23, 0.8);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+            border: 2px solid var(--secondary);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e05d00;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(10, 14, 23, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .top-bar {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        .top-bar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        .main-header {
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .logo img {
+            height: 60px;
+            filter: drop-shadow(0 0 5px var(--primary));
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--white);
+            font-weight: 700;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--light);
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+            z-index: 1;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .header-icons a {
+            color: var(--light);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .header-icons a span {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            box-shadow: var(--primary-shadow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--light);
+            transition: all 0.3s;
+        }
+
+        .mobile-menu-btn:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section with Enhanced Animation */
+        .category-hero {
+            background: linear-gradient(rgba(10, 14, 23, 0.7), rgba(10, 14, 23, 0.9)), 
+                        url('https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 8rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent, rgba(0, 240, 255, 0.1));
+            pointer-events: none;
+        }
+
+        .category-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            background: linear-gradient(to right, var(--white), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(0, 240, 255, 0.8), 0 0 30px rgba(0, 240, 255, 0.6);
+            }
+        }
+
+        .category-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+            z-index: 1;
+        }
+
+        .btn:hover {
+            background-color: #e05d00;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.6);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--accent);
+            margin-left: 1rem;
+            color: var(--accent);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--secondary);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 1rem;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        /* Enhanced Category Filter */
+        .category-filter {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.8rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            color: var(--white);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .filter-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: var(--primary-shadow);
+        }
+
+        /* Enhanced Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--glass);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-image {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-content {
+            padding: 2rem;
+        }
+
+        .product-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            min-height: 3.5rem;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-rating .stars {
+            color: #FFD700;
+        }
+
+        .product-rating .reviews {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .current-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .original-price {
+            font-size: 1.1rem;
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .discount {
+            background: var(--accent);
+            color: var(--secondary);
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .add-to-cart {
+            flex: 1;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart:hover {
+            background: #e05d00;
+            transform: translateY(-2px);
+        }
+
+        .wishlist-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .wishlist-btn:hover {
+            color: #FF0000;
+            border-color: #FF0000;
+            background: rgba(255, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Enhanced Product Filter */
+        .product-filter {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: var(--glass);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .filter-label {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .filter-select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            color: var(--white);
+            padding: 0.8rem 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-select:hover {
+            border-color: var(--primary);
+        }
+
+        .filter-select option {
+            background: var(--secondary);
+        }
+
+        .view-options {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .view-btn {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .view-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .view-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 107, 0, 0.1);
+            filter: blur(40px);
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(50vw, 50vh) rotate(180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* Featured Brands Section */
+        .brands-section {
+            padding: 4rem 1rem;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .brands-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-item {
+            background: var(--glass);
+            padding: 1.5rem 2.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s;
+            opacity: 0.8;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-5px);
+            opacity: 1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .brand-item img {
+            height: 50px;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s;
+        }
+
+        .brand-item:hover img {
+            filter: brightness(1) invert(0);
+        }
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            border: 1px solid var(--glass-border);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.22);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-shadow: var(--neon-shadow);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.7rem;
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .feature-card p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to bottom, var(--secondary), #000);
+            color: var(--white);
+            padding: 5rem 1rem 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary), transparent);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-col h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .footer-col p {
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .footer-links li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+
+        .footer-links li:hover::before {
+            transform: translateX(5px);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        .footer-contact-info {
+            list-style: none;
+        }
+
+        .footer-contact-info li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+            align-items: flex-start;
+        }
+
+        .footer-contact-info i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #e05d00;
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .category-hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .category-hero {
+                padding: 6rem 1rem;
+            }
+            
+            .section {
+                padding: 4rem 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar-container {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .category-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .category-hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .product-filter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .brands-grid {
+                gap: 2rem;
+            }
+
+            .brand-item {
+                padding: 1rem 1.5rem;
+            }
+
+            .brand-item img {
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem 0;
+            }
+
+            .header-icons {
+                margin-top: 1.5rem;
+            }
+
+            .category-hero {
+                padding: 5rem 1rem;
+            }
+
+            .category-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+
+            .add-to-cart, .wishlist-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Background Elements -->
+    <div class="floating-elements">
+        <div class="floating-element" style="width: 300px; height: 300px; top: 10%; left: 5%;"></div>
+        <div class="floating-element" style="width: 400px; height: 400px; bottom: 15%; right: 10%; animation-delay: 3s;"></div>
+        <div class="floating-element" style="width: 250px; height: 250px; top: 50%; left: 30%; animation-delay: 5s;"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-container">
+            <div class="contact-info">
+                <a href="tel:+919538452672"><i class="fas fa-phone"></i> +91 9538452672</a>
+                <a href="mailto:info@hanumansports.com"><i class="fas fa-envelope"></i> info@hanumansports.com</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="main-header">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="https://pngfre.com/wp-content/uploads/hanuman-36-281x300.png" alt="Hanuman Sports Logo">
+                    <div class="logo-text">
+                        <h1>Hanuman Sports</h1>
+                        <p>Mysore's Premier Sports Destination</p>
+                    </div>
+                </div>
+
+                <nav id="main-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="category.html">Categories</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-icons">
+                    <a href="#" id="search-btn"><i class="fas fa-search"></i></a>
+                    <a href="login1_hanumansports.html" id="profile-btn"><i class="fas fa-user"></i></a>
+                    <a href="#" id="cart-btn"><i class="fas fa-shopping-cart"></i><span>0</span></a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="category-hero">
+        <div class="category-hero-content">
+            <h1>Cricket Excellence</h1>
+            <p>Discover our premium range of cricket equipment designed for champions. From professional-grade bats to protective gear, we have everything you need to dominate the pitch and elevate your game to international standards.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Shop Collection</a>
+                <a href="#categories" class="btn btn-outline">Explore Gear</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filter Section -->
+    <section class="section" id="categories">
+        <div class="section-title">
+            <h2>Cricket Categories</h2>
+        </div>
+        <div class="category-filter">
+            <button class="filter-btn active" data-filter="all">All Products</button>
+            <button class="filter-btn" data-filter="bats">Bats</button>
+            <button class="filter-btn" data-filter="balls">Balls</button>
+            <button class="filter-btn" data-filter="protective">Protective Gear</button>
+            <button class="filter-btn" data-filter="accessories">Accessories</button>
+            <button class="filter-btn" data-filter="apparel">Apparel</button>
+        </div>
+    </section>
+
+    <!-- Product Filter Section -->
+    <section class="section">
+        <div class="product-filter">
+            <div class="filter-group">
+                <span class="filter-label">Filter by:</span>
+                <select class="filter-select">
+                    <option>All Products</option>
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Professional</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <span class="filter-label">Sort by:</span>
+                <select class="filter-select">
+                    <option>Popularity</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Newest First</option>
+                </select>
+            </div>
+            <div class="view-options">
+                <button class="view-btn active"><i class="fas fa-th"></i></button>
+                <button class="view-btn"><i class="fas fa-list"></i></button>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="products">
+            <!-- Product 1 - Cricket Bat -->
+            <div class="product-card" data-category="bats">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Professional Cricket Bat">
+                    <span class="product-badge">Best Seller</span>
+                </div>
+                <div class="product-content">
+                    <h3>English Willow Professional Bat</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="reviews">(142 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹12,499</span>
+                        <span class="original-price">₹16,999</span>
+                        <span class="discount">26% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 - Cricket Ball -->
+            <div class="product-card" data-category="balls">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1614624532983-1fe21c1d1c41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cricket Ball">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-content">
+                    <h3>Tournament Grade Cricket Ball</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="reviews">(89 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹1,299</span>
+                        <span class="original-price">₹1,799</span>
+                        <span class="discount">28% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 - Helmet -->
+            <div class="product-card" data-category="protective">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1622185139166-6a8907ae2ff7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cricket Helmet">
+                </div>
+                <div class="product-content">
+                    <h3>Advanced Protective Helmet</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="reviews">(67 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹3,999</span>
+                        <span class="original-price">₹5,499</span>
+                        <span class="discount">27% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 - Gloves -->
+            <div class="product-card" data-category="protective">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cricket Gloves">
+                    <span class="product-badge">Sale</span>
+                </div>
+                <div class="product-content">
+                    <h3>Professional Batting Gloves</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="reviews">(115 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹2,499</span>
+                        <span class="original-price">₹3,499</span>
+                        <span class="discount">29% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 - Apparel -->
+            <div class="product-card" data-category="apparel">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cricket Jersey">
+                </div>
+                <div class="product-content">
+                    <h3>Team Cricket Jersey</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="reviews">(93 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹1,599</span>
+                        <span class="original-price">₹2,299</span>
+                        <span class="discount">30% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 - Kit Bag -->
+            <div class="product-card" data-category="accessories">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cricket Kit Bag">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-content">
+                    <h3>Professional Cricket Kit Bag</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="reviews">(57 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹3,499</span>
+                        <span class="original-price">₹4,999</span>
+                        <span class="discount">30% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 - Beginner Bat -->
+            <div class="product-card" data-category="bats">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1516043827470-d52d5435a122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlf极速x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Beginner Cricket Bat">
+                </div>
+                <div class="product-content">
+                    <h3>Kashmir Willow Beginner Bat</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <span class="reviews">(78 reviews)</span>
+                    </div>
+                    <极速div class="product-price">
+                        <span class="current-price">₹3,999</span>
+                        <span class="original-price">₹5,499</span>
+                        <span class="discount">27% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 - Stumps -->
+            <div class="product-card" data-category="accessories">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1595163079924-a1c5c3a990?ixlib=rb-4.0.3&ixid=M3wxMj极速A3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cricket Stumps">
+                    <span class="product-badge">Sale</span>
+                </div>
+                <div class="product-content">
+                    <h3>Professional Cricket Stumps</h3>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="reviews">(124 reviews)</span>
+                    </div>
+                    <div class="product-price">
+                        <span class="current-price">₹2,299</span>
+                        <span class="original-price">₹3,299</span>
+                        <span class="discount">30% OFF</span>
+                    </div>
+                    <div class="product-actions">
+                        <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                        <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Brands Section -->
+    <section class="brands-section">
+        <div class="section-title">
+            <h2>Featured Brands</h2>
+        </div>
+        <div class="brands-grid">
+            <div class="brand-item">
+                <img src="https://via.placeholder.com/150x50/ffffff/000000?text=SG" alt="SG Cricket">
+            </div>
+            <div class="brand-item">
+                <img src="https://via.placeholder.com/150x50/ffffff/000000?text=Kookaburra" alt="Kookaburra">
+            </div>
+            <div class="brand-item">
+                <img src="https://via.placeholder.com/150x50/ffffff/000000?text=MRF" alt="MRF">
+            </div>
+            <div class="brand-item">
+                <img src="https://via.placeholder.com/150x50/ffffff/000000?text=SS" alt="SS Cricket">
+            </div>
+            <div class="brand-item">
+                <img src="https://via.placeholder.com/150x50/ffffff/000000?text=GM" alt="GM Cricket">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" style="background: rgba(0,0,0,0.3);">
+        <div class="section-title">
+            <h2>Why Choose Our Products</h2>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Professional Grade</h3>
+                <p>All our products meet professional tournament standards for performance and durability.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Free Shipping</h3>
+                <p>We offer free shipping on all orders above ₹1999 across India.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-undo"></i>
+                </div>
+                <h3>Easy Returns</h3>
+                <p>Not satisfied with your purchase? Return within 15 days for a full refund.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Expert Advice</h3>
+                <p>Our team of cricket experts is available to help you choose the right equipment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Hanuman Sports</h3>
+                <p>Mysore's premier destination for professional and amateur athletes. We're committed to helping you achieve your personal best through quality equipment and expert advice.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="category.html">Categories</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Customer Service</h3>
+                <ul class="footer-links">
+                    <极速li><a href="#">My Account</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Visit Us</h3>
+                <ul class="footer-contact-info">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Sports Street, Nazarbad, Mysore - 570010</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9538452672</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <span>info@hanumansports.com</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Sat: 9:00 AM - 8:00 PM<br>Sun: 10:00 AM - 6:00 PM</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Hanuman Sports. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for athletes</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mainNav = document.getElementById('main-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Category Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                productCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Add to Cart Functionality
+        const addToCartBtns = document.querySelectorAll('.add-to-cart');
+        const cartCount = document.querySelector('#cart-btn span');
+        let count = 0;
+        
+        addToCartBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                count++;
+                cartCount.textContent = count;
+                
+                // Show added to cart feedback
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Added';
+                btn.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            });
+        });
+
+        // Wishlist Toggle
+        const wishlistBtns = document.querySelectorAll('.wishlist-btn');
+        
+        wishlistBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const icon = btn.querySelector('i');
+                if (icon.classList.contains('far')) {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    btn.style.color = '#FF0000';
+                    btn.style.borderColor = '#FF0000';
+                } else {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    btn.style.color = '';
+                    btn.style.borderColor = '';
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<极速i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll for product cards
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.product-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.product-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Run animation check on scroll and on load
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
