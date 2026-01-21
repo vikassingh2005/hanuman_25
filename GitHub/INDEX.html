@@ -1533,60 +1533,6 @@
             backdrop-filter: blur(5px);
         }
 
-        /* New Features Styles */
-        /* Special Offers Section */
-        .special-offers {
-            background: linear-gradient(135deg, rgba(156, 39, 176, 0.9), rgba(255, 107, 0, 0.9));
-            padding: 5rem 1rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .special-offers::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.1;
-            z-index: 0;
-        }
-
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .countdown-item {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            padding: 1.5rem;
-            min-width: 100px;
-            backdrop-filter: blur(5px);
-            border: 1px solid var(--glass-border);
-        }
-
-        .countdown-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--white);
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .countdown-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.8);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
         /* Store Location Section */
         .store-location {
             padding: 5rem 1rem;
@@ -1717,15 +1663,6 @@
             .newsletter h2 {
                 font-size: 2rem;
             }
-
-            .countdown-item {
-                min-width: 80px;
-                padding: 1rem;
-            }
-
-            .countdown-value {
-                font-size: 2rem;
-            }
         }
 
         @media (max-width: 576px) {
@@ -1802,20 +1739,6 @@
                 font-size: 2rem;
             }
 
-            .countdown-timer {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-
-            .countdown-item {
-                min-width: 70px;
-                padding: 0.8rem;
-            }
-
-            .countdown-value {
-                font-size: 1.8rem;
-            }
-
             .map-container {
                 height: 350px;
             }
@@ -1869,7 +1792,7 @@
 
                 <div class="header-icons">
                     <a href="#" id="search-btn" aria-label="Search products"><i class="fas fa-search"></i></a>
-                    <a href="login.html" id="profile-btn" aria-label="User profile"><i class="fas fa-user"></i></a>
+                    <a href="PROFILE.html" id="profile-btn" aria-label="User profile"><i class="fas fa-user"></i></a>
                     <a href="#" id="cart-btn" aria-label="Shopping cart"><i class="fas fa-shopping-cart"></i><span>0</span></a>
                 </div>
 
@@ -1886,38 +1809,9 @@
             <h2>Elevate Your Game With Premium Sports Gear</h2>
             <p>Discover the finest quality sports equipment, performance footwear, and cutting-edge accessories for athletes of all levels. Experience the Hanuman Sports difference today.</p>
             <div class="hero-buttons">
-                <a href="#products" class="btn">Explore Collection</a>
+                <a href="CATEGORY.html" class="btn">Explore Collection</a>
                 <a href="#about" class="btn btn-outline">Our Story</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Special Offers Section -->
-    <section class="section special-offers" id="offers">
-        <div class="section-title">
-            <h2>Limited Time Offers</h2>
-        </div>
-        <div class="special-offers-content">
-            <p>Don't miss our exclusive seasonal discounts on premium sports gear. These offers expire soon!</p>
-            <div class="countdown-timer" id="countdown-timer">
-                <div class="countdown-item">
-                    <div class="countdown-value" id="days">00</div>
-                    <div class="countdown-label">Days</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="hours">00</div>
-                    <div class="countdown-label">Hours</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="minutes">00</div>
-                    <div class="countdown-label">Minutes</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value" id="seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
-            </div>
-            <a href="#products" class="btn">Shop Now</a>
         </div>
     </section>
 
@@ -1970,7 +1864,7 @@
         <div class="products">
             <div class="product-card">
                 <div class="product-image">
-                    <img src="c:\Users\doesn\OneDrive\Documents\photos\G-2020 All Surface Volleyball.jpg" alt="nivia g-2020 ">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/477279020/JF/NS/BA/237351543/volleyball-nivia-spot-vb492-1000x1000.jpg" alt="nivia g-2020 ">
                     <span class="product-badge">25% OFF</span>
                     <div class="product-actions">
                         <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></byutton>
@@ -1998,7 +1892,7 @@
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="c:\Users\doesn\OneDrive\Documents\photos\Nivia Spot Volleyball.jpg" alt="nivia spot">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/9/452120403/TZ/SL/CR/9595660/81jqibuwz6l-sl1500-1000x1000.jpg" alt="nivia spot">
                     <div class="product-actions">
                         <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></button>
                         <button aria-label="Quick view"><i class="fas fa-search"></i></button>
@@ -2024,7 +1918,7 @@
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="c:\Users\doesn\OneDrive\Documents\photos\Cosco Super Volleyball.jpg" alt="COSCO SUPER">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/477266491/NY/YQ/GB/237351543/cosco-super-volleyball-1000x1000.jpg" alt="COSCO SUPER">
                     <span class="product-badge">NEW</span>
                     <div class="product-actions">
                         <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></button>
@@ -2052,7 +1946,7 @@
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="c:\Users\doesn\OneDrive\Documents\photos\wilson championship tennsball.jpg" alt="wilson championship tennsball">
+                    <img src="https://tse4.mm.bing.net/th/id/OIP.MTELm7PPC2RNUDfJlOjIlAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="wilson championship tennsball">
                     <div class="product-actions">
                         <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></button>
                         <button aria-label="Quick view"><i class="fas fa-search"></i></button>
@@ -2208,14 +2102,6 @@
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#categories">Categories</a></li>
-                    <li><a href="#about">About Us</a></li>
-                </ul>
             </div>
             <div class="footer-col">
                 <h3>Customer Service</h3>
