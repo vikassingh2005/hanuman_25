@@ -279,7 +279,7 @@
 
             <div class="terms">
                 <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                <label for="agreeTerms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                <label for="agreeTerms">I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></label>
             </div>
 
             <button type="submit" class="btn">Create Account</button>
@@ -314,7 +314,32 @@
             alert('Registration successful! Redirecting to login page...');
             
             // Redirect to login page after registration
-            // window.location.href = 'login.html';
+             window.location.href = 'profile.html';
+        });
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const data = {
+                firstName: firstName.value,
+                lastName: lastName.value,
+                email: email.value,
+                password: password.value,
+                phone: phone.value
+            };
+
+            if (password.value !== confirmPassword.value) {
+               alert("Passwords do not match");
+               return;
+            }
+
+            const res = await fetch("http://localhost:5000/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            const result = await res.json();
+            alert(result.message);
         });
     </script>
 </body>
