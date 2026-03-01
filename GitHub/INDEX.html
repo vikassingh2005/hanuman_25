@@ -10,28 +10,37 @@
     <meta name="keywords" content="sports equipment, cricket gear, badminton rackets, football, mysore sports store, hanuman sports">
     <meta name="author" content="Hanuman Sports">
     <link rel="canonical" href="https://hanumansports.com/">
-    <meta name="theme-color" content="#FF6B00">
+    <meta name="theme-color" content="#00F0FF">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="icon" href="https://pngfre.com/wp-content/uploads/hanuman-36-281x300.png" sizes="192x192">
     <style>
-        :root {
-            --primary: #FF6B00;
-            --primary-light: rgba(255, 107, 0, 0.1);
-            --secondary: #0A0E17;
-            --accent: #00F0FF;
-            --light: #F8F9FA;
-            --dark: #212529;
-            --white: #FFFFFF;
-            --gray: #6C757D;
-            --badminton: #4CAF50;
-            --cricket: #FF9800;
-            --football: #2196F3;
-            --balls: #9C27B0;
-            --glass: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --neon-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
-            --primary-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
-        }
+       :root {
+    --primary: #00F0FF; /* CYAN */
+    --primary-light: rgba(0, 240, 255, 0.12);
+    --secondary: #0A0E17;
+    --accent: #00F0FF;
+    --light: #F8F9FA;
+    --dark: #212529;
+    --white: #FFFFFF;
+    --gray: #6C757D;
+    --badminton: #4CAF50;
+    --cricket: #00F0FF;
+    --football: #2196F3;
+    --balls: #9C27B0;
+    --glass: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --neon-shadow: 0 0 12px rgba(0, 240, 255, 0.8);
+    --primary-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
+}
+.gradient-text {
+    background: linear-gradient(to right, #ffffff, #00F0FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
 
  
         * {
@@ -80,6 +89,7 @@
 
         .top-bar {
             background: linear-gradient(90deg, var(--primary), var(--secondary));
+            
             color: var(--white);
             padding: 0.5rem 0;
             font-size: 0.9rem;
@@ -176,19 +186,19 @@
             filter: drop-shadow(0 0 5px var(--primary));
         }
 
-        .logo-text h1 {
-            font-size: 1.8rem;
-            color: var(--white);
-            font-weight: 700;
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
-        }
+       .logo-text h1 {
+    font-size: 1.6rem; 
+    font-weight: 700;
+    background: linear-gradient(to right, var(--white), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+}
+
 
         .logo-text p {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gray);
             font-family: 'Poppins', sans-serif;
         }
@@ -289,6 +299,13 @@
             position: relative;
             overflow: hidden;
         }
+        .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;   /* 👈 THIS CREATES SPACE */
+    margin-top: 2rem;
+}
+
 
         .hero::before {
             content: '';
@@ -309,7 +326,7 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.6rem;
             margin-bottom: 1.5rem;
             text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
             background: linear-gradient(to right, var(--white), var(--accent));
@@ -318,6 +335,42 @@
             -webkit-text-fill-color: transparent;
             animation: glow 2s infinite alternate;
         }
+        .product-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Wishlist button base */
+.wishlist-btn {
+    background: transparent;
+    border: 1.5px solid var(--accent); /* cyan border */
+    border-radius: 8px; /* ❌ not circle */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Heart default */
+.wishlist-btn i {
+    color: #ffffff; /* white */
+    font-size: 1.1rem;
+}
+
+/* Hover glow only */
+.wishlist-btn:hover {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+}
+
+/* ❤️ ACTIVE = ADDED */
+.wishlist-btn.active i {
+    color: #ff3b3b; /* RED */
+}
+
+
 
         @keyframes glow {
             from {
@@ -329,7 +382,7 @@
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             margin-bottom: 2.5rem;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.8);
@@ -337,18 +390,19 @@
 
         .btn {
             display: inline-block;
-            background-color: var(--primary);
+            background-color: rgba(0, 240, 255, 0.75); /* dimmed cyan */
             color: var(--white);
-            padding: 0.8rem 2rem;
+            padding: 0.55rem 1rem;
+            font-size: 0.85rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
+            border: 2px solid transparent;
             transition: all 0.3s;
-            border: none;
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.4);
+            box-shadow: 0 0 8px rgba(0, 240, 255, 0.25);
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
         }
@@ -364,29 +418,34 @@
             transition: 0.5s;
         }
 
-        .btn:hover {
-            background-color: #e05d00;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.6);
-        }
+       .btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+    transform: translateY(-3px);
+}
+
 
         .btn:hover::before {
             left: 100%;
         }
 
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--accent);
-            margin-left: 1rem;
-            color: var(--accent);
-            box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
-        }
+     .btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
 
-        .btn-outline:hover {
-            background-color: var(--accent);
-            color: var(--secondary);
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
-        }
+        
+
+       .btn-outline:hover {
+    background-color: rgba(0, 240, 255, 0.75); /* cyan */
+    color: var(--secondary);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+
+
 
         /* Featured Categories */
         .section {
@@ -400,7 +459,7 @@
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: var(--white);
             position: relative;
             display: inline-block;
@@ -427,19 +486,37 @@
             margin: 0 auto;
         }
 
-        .category-card {
-            background: var(--glass);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: all 0.5s;
-            text-align: center;
-            padding: 2rem 1.5rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            position: relative;
-            z-index: 1;
-        }
+       .category-card {
+    background: var(--glass);
+    border-radius: 15px;
+    padding: 0.6rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.category-card .btn {
+    width: 120px;
+    padding: 0.45rem 0;
+    font-size: 0.8rem;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;   
+    top: -12px;           
+
+    border-radius: 30px;
+    text-align: center;
+}
+
+
+.category-card .btn:hover {
+    transform: translateY(-1px);
+}
+
+
 
         .category-card::before {
             content: '';
@@ -463,11 +540,16 @@
             opacity: 1;
         }
 
-        .category-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            transition: transform 0.5s;
-        }
+       .category-icon {
+    font-size: 3rem;
+    height: 60px;               /* SAME HEIGHT FOR ALL ICONS */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: transform 0.5s;
+}
+
 
         .category-card:hover .category-icon {
             transform: scale(1.2);
@@ -490,8 +572,8 @@
             text-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
         }
         .category-card.cricket .category-icon {
-            color: var(--cricket);
-            text-shadow: 0 0 15px rgba(255, 152, 0, 0.5);
+            color: var(--accent);
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
         }
         .category-card.football .category-icon {
             color: var(--football);
@@ -505,7 +587,7 @@
         /* Featured Products */
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
@@ -528,7 +610,7 @@
         }
 
         .product-image {
-            height: 250px;
+            height: 220px;
             overflow: hidden;
             position: relative;
         }
@@ -545,18 +627,28 @@
         }
 
         .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            box-shadow: var(--primary-shadow);
-            z-index: 2;
-        }
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    background: rgba(0, 240, 255, 0.15);   /* transparent cyan */
+    border: 1.5px solid rgba(0, 240, 255, 0.6);
+
+    color: #eaffff;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    backdrop-filter: blur(8px);           /* glass effect */
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+}
+.product-badge.new {
+    border-color: rgba(0, 240, 255, 0.9);
+    box-shadow: 0 0 14px rgba(0, 240, 255, 0.5);
+}
+
 
         .product-actions {
             position: absolute;
@@ -608,7 +700,7 @@
         }
 
         .product-title {
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 0.8rem;
             font-weight: 600;
             color: var(--white);
@@ -622,7 +714,7 @@
         }
 
         .current-price {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--primary);
         }
@@ -639,29 +731,28 @@
             font-size: 0.9rem;
         }
 
-        .add-to-cart {
-            width: 100%;
-            padding: 0.8rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            border: none;
-            background: linear-gradient(to right, var(--primary), #FF8C00);
-            color: var(--white);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
+       .add-to-cart {
+    width: 100%;
+    padding: 0.65rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
 
-        .add-to-cart:hover {
-            background: linear-gradient(to right, #FF8C00, var(--primary));
-            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
-            transform: translateY(-3px);
-        }
+   background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+
+       .add-to-cart:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+    transform: translateY(-2px);
+}
+
 
         /* About Section */
         .about {
@@ -729,7 +820,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(255, 107, 0, 0.1), rgba(0, 240, 255, 0.1));
+            background: linear-gradient(45deg, rgba(0, 240, 255, 0.1), rgba(0, 240, 255, 0.1));
         }
 
         .about-content h2 {
@@ -877,7 +968,7 @@
             overflow: hidden;
             margin-bottom: 1.5rem;
             border: 3px solid var(--primary);
-            box-shadow: 0 0 20px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
         }
 
         .author-image img {
@@ -1064,7 +1155,8 @@
         .floating-element {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 107, 0, 0.1);
+            background: rgba(0, 240, 255, 0.1);
+
             filter: blur(30px);
             animation: float 15s infinite linear;
         }
@@ -1150,13 +1242,14 @@
         }
 
         #search-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(255, 107, 0, 0.3);
-        }
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+}
+
 
         #search-form button {
             padding: 0 2rem;
-            background: linear-gradient(to right, var(--primary), #FF8C00);
+            background: linear-gradient(to right, var(--primary), #00F0FF);
             color: white;
             border: none;
             border-radius: 50px;
@@ -1169,7 +1262,7 @@
         }
 
         #search-form button:hover {
-            background: linear-gradient(to right, #FF8C00, var(--primary));
+            background: linear-gradient(to right, #00F0FF, var(--primary));
         }
 
         .search-results {
@@ -1495,7 +1588,7 @@
             visibility: hidden;
             transition: all 0.3s;
             z-index: 999;
-            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
+            box-shadow: 0 5px 20px rgba(0, 240, 255, 0.5);
         }
 
         .back-to-top.active {
@@ -1504,15 +1597,17 @@
         }
 
         .back-to-top:hover {
-            background: #e05d00;
-            transform: translateY(-5px);
-        }
+    background: var(--accent);
+    transform: translateY(-5px);
+}
+
 
         /* Responsive Styles */
         @media (max-width: 1200px) {
             .hero h2 {
                 font-size: 2.5rem;
             }
+            
             
             .about-container {
                 gap: 2rem;
@@ -1648,6 +1743,19 @@
             .map-container {
                 height: 350px;
             }
+            .category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (max-width: 576px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
         }
     </style>
 </head>
@@ -1680,7 +1788,7 @@
         <div class="main-header">
             <div class="header-container">
                 <div class="logo">
-                    <img src="https://pngfre.com/wp-content/uploads/hanuman-36-281x300.png" alt="Hanuman Sports Logo">
+                    <img src="logo.png" alt="Hanuman Sports Logo">
                     <div class="logo-text">
                         <h1>Hanuman Sports</h1>
                         <p>Mysore's Premier Sports Destination</p>
@@ -1725,7 +1833,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h2>Elevate Your Game With Premium Sports Gear</h2>
+            <h2 class="gradient-text">Elevate Your Game With Premium Sports Gear</h2>
             <p>Discover the finest quality sports equipment, performance footwear, and cutting-edge accessories for athletes of all levels. Experience the Hanuman Sports difference today.</p>
             <div class="hero-buttons">
                 <a href="category.html" class="btn">Explore Collection</a>
@@ -1733,11 +1841,12 @@
             </div>
         </div>
     </section>
+    
 
     <!-- Featured Categories -->
     <section class="section" id="categories">
         <div class="section-title">
-            <h2>Performance Categories</h2>
+            <h2 class="gradient-text">Performance Categories</h2>
         </div>
         <div class="categories">
             <div class="category-card badminton">
@@ -1758,7 +1867,7 @@
             </div>
             <div class="category-card football">
                 <div class="category-icon">
-                    <i class='fas fa-mitten'></i>
+                   <i class="fas fa-mitten"></i>
                 </div>
                 <h3>accessories</h3>
                 <p>Gear Up. Game On. Accessorize Your Victory.</p>
@@ -1778,18 +1887,14 @@
     <!-- Featured Products -->
     <section class="section" id="products">
         <div class="section-title">
-            <h2>Elite Performance Gear</h2>
+            <h2 class="gradient-text">Elite Performance Gear</h2>
         </div>
         <div class="products">
             <div class="product-card">
                 <div class="product-image">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/477279020/JF/NS/BA/237351543/volleyball-nivia-spot-vb492-1000x1000.jpg" alt="nivia g-2020 ">
                     <span class="product-badge">25% OFF</span>
-                    <div class="product-actions">
-                        <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></byutton>
-                        <button aria-label="Quick view"><i class="fas fa-search"></i></button>
-                        <button aria-label="Add to cart"><i class="fas fa-shopping-cart"></i></button>
-                    </div>
+                   
                 </div>
                 <div class="product-info">
                     <p class="product-category">VOLLEYBALL</p>
@@ -1806,17 +1911,22 @@
                         <i class="fas fa-star-half-alt"></i>
                         <span>(42)</span>
                     </div>
-                    <button class="btn add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                   <div class="product-buttons">
+    <button class="btn add-to-cart">
+        <i class="fas fa-cart-plus"></i> Add to Cart
+    </button>
+
+    <button class="wishlist-btn" title="Add to Wishlist">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
+ 
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2024/9/452120403/TZ/SL/CR/9595660/81jqibuwz6l-sl1500-1000x1000.jpg" alt="nivia spot">
-                    <div class="product-actions">
-                        <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></button>
-                        <button aria-label="Quick view"><i class="fas fa-search"></i></button>
-                        <button aria-label="Add to cart"><i class="fas fa-shopping-cart"></i></button>
-                    </div>
+                   
                 </div>
                 <div class="product-info">
                     <p class="product-category">VOLLEYBALL</p>
@@ -1832,18 +1942,23 @@
                         <i class="far fa-star"></i>
                         <span>(28)</span>
                     </div>
-                    <button class="btn add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    <div class="product-buttons">
+    <button class="btn add-to-cart">
+        <i class="fas fa-cart-plus"></i> Add to Cart
+    </button>
+
+    <button class="wishlist-btn" title="Add to Wishlist">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
+
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
                     <img src="https://5.imimg.com/data5/SELLER/Default/2024/12/477266491/NY/YQ/GB/237351543/cosco-super-volleyball-1000x1000.jpg" alt="COSCO SUPER">
                     <span class="product-badge">NEW</span>
-                    <div class="product-actions">
-                        <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></button>
-                        <button aria-label="Quick view"><i class="fas fa-search"></i></button>
-                        <button aria-label="Add to cart"><i class="fas fa-shopping-cart"></i></button>
-                    </div>
+                    
                 </div>
                 <div class="product-info">
                     <p class="product-category">VOLLEYBALL</p>
@@ -1860,17 +1975,22 @@
                         <i class="fas fa-star"></i>
                         <span>(56)</span>
                     </div>
-                    <button class="btn add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    <div class="product-buttons">
+    <button class="btn add-to-cart">
+        <i class="fas fa-cart-plus"></i> Add to Cart
+    </button>
+
+    <button class="wishlist-btn" title="Add to Wishlist">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
+
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
                     <img src="https://tse4.mm.bing.net/th/id/OIP.MTELm7PPC2RNUDfJlOjIlAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="wilson championship tennsball">
-                    <div class="product-actions">
-                        <button aria-label="Add to wishlist"><i class="fas fa-heart"></i></button>
-                        <button aria-label="Quick view"><i class="fas fa-search"></i></button>
-                        <button aria-label="Add to cart"><i class="fas fa-shopping-cart"></i></button>
-                    </div>
+                  
                 </div>
                 <div class="product-info">
                     <p class="product-category">TENNSBALL</p>
@@ -1886,7 +2006,15 @@
                         <i class="fas fa-star-half-alt"></i>
                         <span>(34)</span>
                     </div>
-                    <button class="btn add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    <div class="product-buttons">
+    <button class="btn add-to-cart">
+        <i class="fas fa-cart-plus"></i> Add to Cart
+    </button>
+
+    <button class="wishlist-btn" title="Add to Wishlist">
+        <i class="fas fa-heart"></i>
+    </button>
+</div>
                 </div>
             </div>
         </div>
@@ -1895,7 +2023,7 @@
     <!-- About Section -->
     <section class="section about" id="about">
         <div class="section-title">
-            <h2>Our Legacy</h2>
+           <h2 class="gradient-text">Our Legacy</h2>
         </div>
         <div class="about-container">
             <div class="about-image">
@@ -1942,7 +2070,7 @@
     <!-- Store Location Section -->
     <section class="section store-location" id="location">
         <div class="section-title">
-            <h2>Visit Our Store</h2>
+            <h2 class="gradient-text">Visit Our Store</h2>
         </div>
         <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: rgba(255, 255, 255, 0.8);">
             Come experience our premium sports equipment in person at our flagship store in Mysore. Our knowledgeable staff will help you find exactly what you need to elevate your game.
@@ -2090,6 +2218,8 @@
     <div class="overlay" id="overlay"></div>
 
     <script>
+        
+
  
         /* Check if user is logged in
         if (localStorage.getItem("loggedIn") !== "true") {
@@ -2320,16 +2450,18 @@
         const profileBtn = document.getElementById("profile-btn");
         const profileMenu = document.getElementById("profile-menu");
 
-        profileBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-            profileMenu.style.display =
-            profileMenu.style.display === "block" ? "none" : "block";
-       });
+        if (profileBtn && profileMenu) {
+            profileBtn.addEventListener("click", function (e) {
+                e.preventDefault();
+                profileMenu.style.display =
+                profileMenu.style.display === "block" ? "none" : "block";
+           });
+        }
 
         // Close dropdown when clicking outside
         document.addEventListener("click", function (e) {
-            if (!e.target.closest(".profile-dropdown")) {
-        profileMenu.style.display = "none";
+            if (!e.target.closest(".profile-dropdown") && profileMenu) {
+                profileMenu.style.display = "none";
             }  
         });
 
@@ -2345,24 +2477,32 @@
         // Update cart count on page load
         updateCartCount();
 
-        cartBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            cartSidebar.classList.add('active');
-            overlay.style.display = 'block';
-            renderCartItems();
-        });
+        if (cartBtn && cartSidebar && overlay) {
+            cartBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                cartSidebar.classList.add('active');
+                overlay.style.display = 'block';
+                renderCartItems();
+            });
+        }
 
-        closeCart.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            overlay.style.display = 'none';
-        });
+        if (closeCart && cartSidebar && overlay) {
+            closeCart.addEventListener('click', () => {
+                cartSidebar.classList.remove('active');
+                overlay.style.display = 'none';
+            });
+        }
 
-        overlay.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            overlay.style.display = 'none';
-        });
+        if (overlay && cartSidebar) {
+            overlay.addEventListener('click', () => {
+                cartSidebar.classList.remove('active');
+                overlay.style.display = 'none';
+            });
+        }
 
         function renderCartItems() {
+            if (!cartItemsContainer || !cartTotalPrice) return;
+            
             if (cart.length === 0) {
                 cartItemsContainer.innerHTML = `
                     <div class="empty-cart">
@@ -2452,6 +2592,7 @@
 
         function updateCartCount() {
             const cartCount = document.querySelector('#cart-btn span');
+            if (!cartCount) return;
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             cartCount.textContent = totalItems;
         }
@@ -2462,7 +2603,7 @@
         addToCartButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const productCard = button.closest('.product-card');
-                const productId = productCard.querySelector('.product-image').getAttribute('data-id') || Date.now();
+                const productId = Date.now().toString();
                 const productName = productCard.querySelector('.product-title').textContent;
                 const productPrice = parseFloat(productCard.querySelector('.current-price').textContent.replace('₹', '').replace(',', ''));
                 const productImage = productCard.querySelector('.product-image img').src;
@@ -2506,7 +2647,9 @@
             setTimeout(() => {
                 notification.classList.remove('show');
                 setTimeout(() => {
-                    document.body.removeChild(notification);
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
                 }, 300);
             }, 3000);
         }
@@ -2519,11 +2662,11 @@
                 bottom: 30px;
                 left: 50%;
                 transform: translateX(-50%);
-                background: linear-gradient(to right, var(--primary), #FF8C00);
+                background: rgba(0, 240, 255, 0.75);
                 color: white;
                 padding: 15px 25px;
                 border-radius: 50px;
-                box-shadow: 0 10px 25px rgba(255, 107, 0, 0.4);
+                box-shadow: 0 10px 25px rgba(0, 240, 255, 0.35);
                 display: flex;
                 align-items: center;
                 gap: 15px;
@@ -2546,7 +2689,9 @@
 
         // Add data-id to product images for cart functionality
         document.querySelectorAll('.product-card').forEach((card, index) => {
-            card.querySelector('.product-image').setAttribute('data-id', index + 1);
+            if (!card.querySelector('.product-image').hasAttribute('data-id')) {
+                card.querySelector('.product-image').setAttribute('data-id', index + 1);
+            }
         });
         
         // Animation on scroll with debouncing
@@ -2573,9 +2718,11 @@
 
         // Set initial state for animated elements
         document.querySelectorAll('.category-card, .product-card, .about-image, .about-content, .feature-item').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            if (!element.style.opacity) {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            }
         });
 
         // Run animation check on scroll and on load
@@ -2600,17 +2747,34 @@
             });
         });
         
-            // Logout Functionality
-            const logoutBtn = document.getElementById("logout-btn");
-            if (logoutBtn) {
+        // Logout Functionality
+        const logoutBtn = document.getElementById("logout-btn");
+        if (logoutBtn) {
             logoutBtn.addEventListener("click", function (e) {
-            e.preventDefault();
-               if (confirm("Are you sure you want to logout?")) {
-               localStorage.clear();
-               window.location.href = "LOGIN.html";
+                e.preventDefault();
+                if (confirm("Are you sure you want to logout?")) {
+                    localStorage.clear();
+                    window.location.href = "LOGIN.html";
+                }
+            });
         }
-    });
-}
+
+        // Wishlist functionality
+        document.querySelectorAll(".wishlist-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                btn.classList.toggle("active");
+
+                const icon = btn.querySelector("i");
+
+                if (btn.classList.contains("active")) {
+                    icon.style.color = "#ff3b3b"; // RED when added
+                    showNotification("Added to wishlist ❤️");
+                } else {
+                    icon.style.color = "#ffffff"; // WHITE when removed
+                    showNotification("Removed from wishlist 🤍");
+                }
+            });
+        });
     </script>
 </body>
 </html>
