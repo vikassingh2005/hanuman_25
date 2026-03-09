@@ -281,7 +281,7 @@
             background-position: center;
             background-attachment: fixed;
             color: var(--white);
-            padding: 8rem 1rem;
+            padding: 12rem 1rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -328,79 +328,6 @@
             margin-bottom: 2.5rem;
             line-height: 1.8;
             color: rgba(255, 255, 255, 0.8);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: rgba(0, 240, 255, 0.75);
-            color: var(--white); /* WHITE text normally */
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 8px rgba(0,240,255,0.25);
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-
-        .hero-buttons .btn:first-child {
-            background: var(--primary);
-            border: 2px solid var(--primary);
-            color: var(--white); /* WHITE text normally */
-            box-shadow: 0 0 20px rgba(0,240,255,0.7);
-        }
-
-        .hero-buttons .btn:first-child:hover {
-            background: transparent;
-            color: var(--primary); /* CYAN text on hover */
-            box-shadow: 0 0 20px rgba(0,240,255,0.5);
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-            z-index: 1;
-        }
-
-        .btn:hover {
-            background-color: var(--primary); /* SOLID CYAN on hover */
-            color: #000000; /* BLACK text on hover */
-            transform: translateY(-3px);
-            box-shadow: 0 0 20px rgba(0,240,255,0.6);
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary); /* CYAN text normally */
-            box-shadow: var(--primary-shadow);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary); /* SOLID CYAN on hover */
-            color: #000000; /* BLACK text on hover */
-            box-shadow: 0 0 25px rgba(0,240,255,0.8);
         }
 
         /* Section Styles */
@@ -1693,10 +1620,6 @@
         <div class="category-hero-content">
             <h1>Badminton Excellence</h1>
             <p>Discover our premium range of badminton equipment designed for champions. From professional-grade rackets to precision shuttlecocks, we have everything you need to dominate the court and elevate your game to international standards.</p>
-            <div class="hero-buttons">
-                <a href="#products" class="btn">Shop Collection</a>
-                <a href="#categories" class="btn btn-outline">Explore Gear</a>
-            </div>
         </div>
     </section>
 
