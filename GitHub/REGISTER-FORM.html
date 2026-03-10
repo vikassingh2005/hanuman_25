@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Hanuman Sports</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --primary: #FF6B00;
-            --primary-light: rgba(255, 107, 0, 0.1);
+            --primary: #00F0FF;
+            --primary-light: rgba(0, 240, 255, 0.12);
             --secondary: #0A0E17;
             --accent: #00F0FF;
             --light: #F8F9FA;
@@ -18,8 +21,12 @@
             --gray: #6C757D;
             --glass: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
-            --neon-shadow: 0 0 10px rgba(0, 240, 255, 0.7);
-            --primary-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+            --neon-shadow: 0 0 12px rgba(0, 240, 255, 0.8);
+            --primary-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
+            --warning: #FF4D4D;
+            --warning-glow: rgba(255, 77, 77, 0.6);
+            --success: #00F0FF;
+            --success-glow: rgba(0, 240, 255, 0.6);
         }
 
         * {
@@ -38,13 +45,18 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: linear-gradient(rgba(10, 14, 23, 0.9), rgba(10, 14, 23, 0.9)), 
-                        url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(10, 14, 23, 0.9), rgba(10, 14, 23, 0.9)),
+                url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
         }
@@ -87,11 +99,10 @@
         .logo h1 {
             font-size: 2rem;
             color: var(--white);
-            background: linear-gradient(to right, var(--primary), var(--accent));
+            background: linear-gradient(to right, #ffffff, var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
         }
 
         .logo p {
@@ -100,14 +111,40 @@
         }
 
         .form-row {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
             margin-bottom: 1.5rem;
+        }
+
+        .full-width {
+            grid-column: span 2;
         }
 
         .form-group {
             flex: 1;
             position: relative;
+            width: 100%;
+        }
+
+        .input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            height: 48px;
+            min-width: 220px;
+            padding: 0 60px 0 15px;
+            border-radius: 8px;
+        }
+
+        .input-wrapper i {
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .form-group label {
@@ -131,7 +168,38 @@
         .form-group input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 10px rgba(255, 107, 0, 0.3);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        /* Shake animation for mismatched fields */
+        .input-error {
+            border-color: var(--warning) !important;
+            box-shadow: 0 0 10px var(--warning-glow) !important;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            20% {
+                transform: translateX(-6px);
+            }
+
+            40% {
+                transform: translateX(6px);
+            }
+
+            60% {
+                transform: translateX(-4px);
+            }
+
+            80% {
+                transform: translateX(4px);
+            }
         }
 
         .form-group i {
@@ -178,26 +246,26 @@
 
         .btn {
             display: inline-block;
-            background: linear-gradient(to right, var(--primary), #FF8C00);
+            background-color: rgba(0, 240, 255, 0.75);
             color: var(--white);
             padding: 1rem;
             border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
+            border: 2px solid transparent;
             transition: all 0.3s;
-            border: none;
             cursor: pointer;
             width: 100%;
             font-size: 1rem;
             font-family: 'Orbitron', sans-serif;
             letter-spacing: 1px;
             margin-bottom: 1.5rem;
+            box-shadow: 0 0 8px rgba(0, 240, 255, 0.25);
         }
 
         .btn:hover {
-            background: linear-gradient(to right, #FF8C00, var(--primary));
-            box-shadow: 0 5px 20px rgba(255, 107, 0, 0.5);
-            transform: translateY(-3px);
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
         }
 
         .login-link {
@@ -215,83 +283,134 @@
             color: var(--primary);
         }
 
-        @media (max-width: 768px) {
-            .form-row {
-                flex-direction: column;
-                gap: 1rem;
-            }
+        .success-message {
+            display: none;
+            background: rgba(0, 240, 255, 0.15);
+            border: 1px solid rgba(0, 240, 255, 0.5);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+        }
+
+        .success-message i {
+            margin-right: 0.5rem;
+            color: var(--accent);
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.7);
+        }
+
+        .instructions {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         @media (max-width: 576px) {
             .register-container {
                 padding: 2rem 1.5rem;
             }
-            
+
             .logo img {
                 height: 60px;
             }
-            
+
             .logo h1 {
                 font-size: 1.5rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="register-container">
         <div class="logo">
-            <img src="https://pngfre.com/wp-content/uploads/hanuman-36-281x300.png" alt="Hanuman Sports Logo">
+            <img src="logo.png" alt="Hanuman Sports Logo">
             <h1>Hanuman Sports</h1>
             <p>Mysore's Premier Sports Destination</p>
         </div>
+        <!-- ── INLINE SUCCESS MESSAGE ── -->
+        <div class="success-message" id="successMessage">
+            <div class="success-icon-wrap">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Registration Successful!</h3>
+            <p>Your account has been created.<br>Redirecting you to your profile…</p>
+            <div class="redirect-bar">
+                <div class="redirect-bar-fill" id="redirectBar"></div>
+            </div>
+        </div>
+        <div class="success-message" id="warningMessage" style="display:none; border-color:#FF4D4D; color:#FF4D4D;">
+        </div>
 
         <form id="registerForm">
+            <!-- Row 1 -->
             <div class="form-row">
                 <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                    <i class="fas fa-user"></i>
+                    <label>First Name</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="firstName" name="firstname" required>
+                        <i class="fas fa-user"></i>
+                    </div>
                 </div>
-
                 <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                    <i class="fas fa-user"></i>
+                    <label>Last Name</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="lastName" name="lastname" required>
+                        <i class="fas fa-user"></i>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-                <i class="fas fa-envelope"></i>
+            <!-- Row 2 -->
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label>Email Address</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" name="email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
             </div>
 
+            <!-- Row 3 -->
             <div class="form-row">
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
-                    <i class="fas fa-eye toggle-password" data-target="password"></i>
+                    <label>Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
                 </div>
-
                 <div class="form-group">
-                    <label for="confirmPassword">Confirm Password</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required>
-                    <i class="fas fa-eye toggle-password" data-target="confirmpassword"></i>
+                    <label>Confirm Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="confirmPassword" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone">
-                <i class="fas fa-phone"></i>
+            <!-- Row 4 -->
+            <div class="form-row">
+                <div class="form-group full-width">
+                    <label>Phone Number</label>
+                    <div class="input-wrapper">
+                        <input type="tel" id="phone" name="phone" required>
+                        <i class="fas fa-phone"></i>
+                    </div>
+                </div>
             </div>
 
             <div class="terms">
                 <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
-                <label for="agreeTerms">I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a></label>
+                <label for="agreeTerms">I agree to the <a href="terms.html">Terms of Service</a> and <a
+                        href="privacy.html">Privacy Policy</a></label>
             </div>
 
-            <button type="submit" class="btn">Created a new Account</button>
+            <button type="submit" class="btn">Create a New Account</button>
 
             <div class="login-link">
                 Already have an account? <a href="login.html">Login here</a>
@@ -300,35 +419,64 @@
     </div>
 
     <script>
-    document.querySelectorAll(".toggle-password").forEach(icon => {
-    icon.addEventListener("click", () => {
-        const input = document.getElementById(icon.dataset.target);
 
-        if (!input) return;
+        function showSuccess() {
+            const successBox = document.getElementById("successMessage");
+            successBox.style.display = "block";
 
-        const type = input.type === "password" ? "text" : "password";
-        input.type = type;
+            // Optional: hide the form
+            document.getElementById("registerForm").style.display = "none";
+        }
 
-        icon.classList.toggle("fa-eye");
-        icon.classList.toggle("fa-eye-slash");
-    });
-});
+        function showWarning(title, message) {
+            const warningBox = document.getElementById("warningMessage");
+            warningBox.innerHTML = `<strong>${title}</strong><br>${message}`;
+            warningBox.style.display = "block";
+        }
 
-        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+        /* ── Toggle Password Visibility ── */
+        document.querySelectorAll(".toggle-password").forEach(icon => {
+            icon.addEventListener("click", () => {
+                const input = icon.previousElementSibling;
+                input.type = input.type === "password" ? "text" : "password";
+                icon.classList.toggle("fa-eye");
+                icon.classList.toggle("fa-eye-slash");
+            });
+        });
+
+        /* ── Form Submit ── */
+        document.getElementById('registerForm').addEventListener('submit', async function (e) {
             e.preventDefault();
+
+            const passwordEl = document.getElementById("password");
+            const confirmPasswordEl = document.getElementById("confirmPassword");
+
+            // Visual reset
+            passwordEl.classList.remove("input-error");
+            confirmPasswordEl.classList.remove("input-error");
+
+            if (passwordEl.value !== confirmPasswordEl.value) {
+                // Highlight both fields with error style + shake
+                passwordEl.classList.add("input-error");
+                confirmPasswordEl.classList.add("input-error");
+
+                // Remove shake class after animation so it can retrigger
+                setTimeout(() => {
+                    passwordEl.classList.remove("input-error");
+                    confirmPasswordEl.classList.remove("input-error");
+                }, 600);
+
+                showWarning("Password Mismatch", "Your passwords do not match.<br>Please re-enter them carefully.");
+                return;
+            }
 
             const data = {
                 firstname: document.getElementById("firstName").value,
                 lastname: document.getElementById("lastName").value,
                 email: document.getElementById("email").value,
-                password: document.getElementById("password").value,
+                password: passwordEl.value,
                 phone: document.getElementById("phone").value
             };
-
-            if (password.value !== confirmPassword.value) {
-                alert("Passwords do not match");
-                return;
-            }
 
             try {
                 const res = await fetch("http://localhost:3000/api/auth/register", {
@@ -340,15 +488,19 @@
                 const result = await res.json();
 
                 if (res.ok) {
-                   alert("Registration successful!");
-                   window.location.href = "profile.html"; // ✅ redirect
+                    showSuccess();
+                    setTimeout(() => {
+                        window.location.href = "profile.html";
+                    }, 2700);
                 } else {
-                    alert(result.message);
+                    showWarning("Registration Failed", result.message || "Something went wrong.<br>Please try again.");
                 }
+
             } catch (err) {
-                alert("Server error");
+                showWarning("Server Error", "Unable to reach the server.<br>Please check your connection and try again.");
             }
         });
     </script>
 </body>
+
 </html>
